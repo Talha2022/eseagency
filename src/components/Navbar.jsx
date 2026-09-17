@@ -1,0 +1,197 @@
+import { useState, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import imgCampaigning  from '../assets/homepage/campaign.png'
+import imgSocial       from '../assets/homepage/social.png'
+import imgBranding     from '../assets/homepage/bd.png'
+import imgEmployer     from '../assets/homepage/empbd.png'
+import imgWebsites     from '../assets/homepage/website.png'
+
+const links = [
+  { label: 'Home',      to: '/' },
+  { label: 'Work',      to: '/work' },
+  { label: 'Expertise', to: null, dropdown: true },
+  { label: 'Agency',    to: '/agency' },
+  { label: 'Jobs',      to: null },
+  { label: 'Contact',   to: '/contact' },
+]
+
+const expertiseCategories = [
+  { name: 'Campaigning',       to: '/expertise/campaigning',        img: imgCampaigning },
+  { name: 'Social Media',      to: '/expertise/social-media',       img: imgSocial },
+  { name: 'Branding & Design', to: '/expertise/branding-design',    img: imgBranding },
+  { name: 'Employer branding', to: '/expertise/employer-branding',  img: imgEmployer },
+  { name: 'Websites',          to: '/expertise/websites',           img: imgWebsites },
+]
+
+export default function Navbar({ transparent = false }) {
+  const { pathname } = useLocation()
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [hoveredIndex, setHoveredIndex] = useState(0)
+  const timeoutRef = useRef(null)
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setIsDropdownOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false)
+    }, 180)
+  }
+
+  const EASING = 'cubic-bezier(0.76, 0, 0.24, 1)'
+  const DURATION = '0.6s'
+
+  return (
+    <header
+      style={{
+        backgroundColor: isDropdownOpen ? '#0d0d0e' : transparent ? 'transparent' : '#0d0d0e',
+        borderBottom: isDropdownOpen ? '1px solid rgba(255,255,255,0.10)' : '1px solid rgba(255,255,255,0.05)',
+        transition: `background-color ${DURATION} ${EASING}, border-color ${DURATION} ${EASING}`,
+      }}
+      className="relative z-50 w-full"
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Top Navbar Row */}
+      <div className="flex items-center justify-between px-6 sm:px-10 py-5 max-w-7xl mx-auto w-full">
+        <Link to="/" className="text-sm font-semibold tracking-wide text-white no-underline flex items-center gap-0.5">
+          ese agency<span className="text-[10px] text-white/60 -mt-1">™</span>
+        </Link>
+
+        <ul className="flex items-center gap-6 sm:gap-8 list-none m-0 p-0">
+          {links.map(({ label, to, dropdown }) => {
+            const isActive = to && pathname === to
+            if (dropdown) {
+              return (
+                <li
+                  key={label}
+                  className="relative py-1"
+                  onMouseEnter={handleMouseEnter}
+                >
+                  <button
+                    onClick={() => setIsDropdownOpen(prev => !prev)}
+                    className={`inline-flex items-center gap-2 text-sm no-underline transition-colors duration-200 cursor-pointer ${
+                      isDropdownOpen ? 'text-white font-semibold' : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    <span>{label}</span>
+                    <span
+                      className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                        isDropdownOpen
+                          ? 'bg-white/20 border-white text-white'
+                          : 'border-white/30 text-white/70 group-hover:border-white/60'
+                      }`}
+                    >
+                      <svg
+                        className={`w-2.5 h-2.5 transition-transform duration-300 ${
+                          isDropdownOpen ? 'rotate-180 text-white' : 'rotate-0 text-white/70'
+                        }`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 5v14M5 12l7 7 7-7" />
+                      </svg>
+                    </span>
+                  </button>
+                </li>
+              )
+            }
+            return (
+              <li key={label}>
+                {to ? (
+                  <Link
+                    to={to}
+                    className={`text-sm no-underline transition-colors duration-200 ${
+                      isActive ? 'text-white font-semibold' : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <a href="#" className="text-sm text-white/70 hover:text-white no-underline transition-colors duration-200">
+                    {label}
+                  </a>
+                )}
+              </li>
+            )
+          })}
+          <li className="flex gap-1.5 text-sm ml-2">
+            <a href="#" className="text-white/50 hover:text-white no-underline">De</a>
+            <a href="#" className="font-bold text-white no-underline">En</a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Mega Dropdown Panel sliding from top */}
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          clipPath: isDropdownOpen ? 'inset(0% 0% -100% 0%)' : 'inset(0% 0% 100% 0%)',
+          transition: isDropdownOpen
+            ? `clip-path ${DURATION} ${EASING}, opacity ${DURATION} ${EASING}`
+            : `clip-path ${DURATION} ${EASING}, opacity ${DURATION} ${EASING}, visibility 0s ${DURATION}`,
+          opacity: isDropdownOpen ? 1 : 0,
+          visibility: isDropdownOpen ? 'visible' : 'hidden',
+          pointerEvents: isDropdownOpen ? 'auto' : 'none',
+        }}
+        className="absolute top-full left-0 right-0 w-full bg-[#0d0d0e]/98 backdrop-blur-2xl border-b border-white/10 shadow-2xl origin-top z-50"
+      >
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-10 lg:py-14">
+          <div className="flex items-start gap-12">
+
+            {/* Left Label */}
+            <div className="w-48 shrink-0 pt-2">
+              <span className="text-xs sm:text-sm font-medium tracking-wide text-white/50 uppercase">
+                Our Expertise
+              </span>
+            </div>
+
+            {/* Center Category List */}
+            <div className="flex flex-col flex-1">
+              {expertiseCategories.map(({ name, to }, i) => (
+                <Link
+                  key={name}
+                  to={to}
+                  onClick={() => setIsDropdownOpen(false)}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  className="group flex items-center justify-between text-2xl sm:text-3xl lg:text-[38px] font-semibold tracking-tight no-underline transition-all duration-200 transform hover:translate-x-2 py-1.5"
+                  style={{ color: hoveredIndex === i ? '#ffffff' : 'rgba(255,255,255,0.45)' }}
+                >
+                  <span>{name}</span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Right — image that changes on hover */}
+            <div className="shrink-0 relative" style={{ width: '420px' }}>
+              {expertiseCategories.map(({ name, img }, i) => (
+                <img
+                  key={name}
+                  src={img}
+                  alt={name}
+                  className="absolute top-0 right-0 w-full h-auto object-contain transition-opacity duration-500"
+                  style={{ opacity: hoveredIndex === i ? 1 : 0 }}
+                />
+              ))}
+              {/* spacer */}
+              <img
+                src={expertiseCategories[hoveredIndex].img}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-auto object-contain invisible"
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+

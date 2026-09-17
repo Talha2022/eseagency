@@ -1,0 +1,23 @@
+<svg class="wlp-cursor__default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="35" viewBox="0 0 33.853 34.451">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.634" cy="0.328" r="0.541" gradientTransform="matrix(1, -0.008, 0.01, 1.228, -0.003, -0.07)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00b15f"></stop>
+      <stop offset="1" stop-color="#009a5f" stop-opacity="0.588"></stop>
+    </radialGradient>
+    <filter id="Path_746" x="0" y="0" width="33.853" height="34.451" filterUnits="userSpaceOnUse">
+      <feOffset dx="0.5" dy="1" input="SourceAlpha"></feOffset>
+      <feGaussianBlur stdDeviation="0.75" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#fff" flood-opacity="0.4" result="color"></feFlood>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"></feComposite>
+      <feComposite operator="in" in="color"></feComposite>
+      <feComposite operator="in" in2="SourceGraphic"></feComposite>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="Path_746-2" data-name="Path 746" d="M22.149,22.979,12.258.723a1.245,1.245,0,0,0-2.26,0L.106,22.979a1.237,1.237,0,0,0,1.564,1.66l9.456-3.546,9.459,3.546a1.245,1.245,0,0,0,1.564-1.659" transform="translate(0.717 13.479) rotate(-35.025)" fill="url(#radial-gradient)"></path>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_746)">
+      <path id="Path_746-3" data-name="Path 746" d="M22.149,22.979,12.258.723a1.245,1.245,0,0,0-2.26,0L.106,22.979a1.237,1.237,0,0,0,1.564,1.66l9.456-3.546,9.459,3.546a1.245,1.245,0,0,0,1.564-1.659" transform="translate(0.72 13.48) rotate(-35.02)" fill="#fff"></path>
+    </g>
+    <path id="Path_746-4" data-name="Path 746" d="M22.149,22.979,12.258.723a1.245,1.245,0,0,0-2.26,0L.106,22.979a1.237,1.237,0,0,0,1.564,1.66l9.456-3.546,9.459,3.546a1.245,1.245,0,0,0,1.564-1.659" transform="translate(0.717 13.479) rotate(-35.025)" fill="none" stroke="rgba(141,255,189,0.69)" stroke-linejoin="round" stroke-width="1"></path>
+  </g>
+</svg>

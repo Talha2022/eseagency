@@ -1,0 +1,40 @@
+export default function AgencyAbout() {
+  return (
+    <section className="bg-black text-white px-10">
+
+      {/* Top row — small label + small body text */}
+      <div className="flex gap-16 pb-20">
+        <p className="text-xs tracking-widest text-white/50 whitespace-nowrap shrink-0">
+          Why us
+        </p>
+        <div className="flex-1 flex justify-end">
+          <p className="text-sm text-white/70 leading-relaxed max-w-xl text-right">
+            Yes, we're young. Yes, we live at the cutting edge and speak the language
+            of the present day fluently in and around the digital world. Yes, we mix
+            our visionary mindset with timeless quality. Yes, we are snappy,
+            provocative and competitive. But no, we haven't finished learning yet and
+            we're still a long way off.
+          </p>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-white/10 mb-20" />
+
+      {/* Bottom block — large text */}
+      <div className="flex gap-16 pb-32">
+        <p className="text-xs tracking-widest text-white/50 whitespace-nowrap shrink-0 pt-2">
+          This is ESE
+        </p>
+        <p className="text-[clamp(28px,4vw,52px)] font-light leading-tight tracking-tight">
+          Over the last five years, we have grown from a team of three to a team
+          of twenty. The three founders of the ESE Agency have built a prosperous
+          company from a high school graduation project. Everything is one hundred
+          percent "self-made". While others read theory books, we feel the spirit
+          of the times, set high goals and give our all to achieve them.
+        </p>
+      </div>
+
+    </section>
+  )
+}
