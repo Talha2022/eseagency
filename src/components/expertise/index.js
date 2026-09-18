@@ -1,3 +1,6 @@
 export { default as ServiceHero } from './ServiceHero'
 export { default as ServiceIntro } from './ServiceIntro'
 export { default as ServiceOffers } from './ServiceOffers'
+export { default as ServiceStatement } from './ServiceStatement'
+export { default as ServiceWorkGrid } from './ServiceWorkGrid'
+export { default as OtherExpertise } from './OtherExpertise'

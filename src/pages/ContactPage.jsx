@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import StaticBackground from '../components/StaticBackground'
 import emanuelImg from '../assets/Contact/imgi_10_65d394c255321c24c981b193_ese-profilbild-emanuel-p-500.jpg'
 import keyvisual  from '../assets/Contact/imgi_9_65310415aea0e5cfda5f0647_ese-keyvisual-contact2.jpg'
@@ -207,6 +208,7 @@ export default function ContactPage() {
         </div>
 
       </div>
+      <Footer />
     </div>
   )
 }

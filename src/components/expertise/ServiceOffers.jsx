@@ -76,10 +76,7 @@ export default function ServiceOffers({ offers = defaultOffers, label = 'Our off
             {label}
           </span>
 
-          {/* Interactive Accent Circle (as seen in screenshot) */}
-          <div className="hidden lg:flex items-center justify-center my-auto pt-10">
-            <div className="w-16 h-16 rounded-full border border-white/20 transition-all duration-500 hover:scale-125 hover:border-white/50" />
-          </div>
+          
         </div>
 
         {/* Right Column: List of Offer Items */}

@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../components/Layout'
-import Footer from '../components/Footer'
 import ServiceHero from '../components/expertise/ServiceHero'
 import ServiceIntro from '../components/expertise/ServiceIntro'
-import ServiceOffers from '../components/expertise/ServiceOffers'
+import ServiceOffers    from '../components/expertise/ServiceOffers'
+import ServiceStatement from '../components/expertise/ServiceStatement'
+import ServiceWorkGrid  from '../components/expertise/ServiceWorkGrid'
+import OtherExpertise   from '../components/expertise/OtherExpertise'
 
 import bgCampaigning from '../assets/homepage/expertise-campaigning.jpg'
 import bgSocial      from '../assets/homepage/expertise-social.jpg'
@@ -24,6 +26,12 @@ const services = {
       'Cross-Channel Media',
       'Performance & Analytics',
     ],
+    statement: 'We turn bold ideas into campaigns that move people. Strategic at the core, fearless in execution — we create work that sticks, spreads, and delivers measurable results.',
+    stats: [
+      { value: '80+', label: 'Campaigns' },
+      { value: '17',  label: 'Awards' },
+      { value: '7',   label: 'Years of Experience' },
+    ],
   },
   'social-media': {
     title: 'Social Media',
@@ -35,6 +43,12 @@ const services = {
       'Community Management',
       'Short-form & Reels Production',
       'Paid Social Ads',
+    ],
+    statement: 'We speak fluent social — across every platform, format, and algorithm. Our content doesn\'t interrupt the feed. It belongs there.',
+    stats: [
+      { value: '50+', label: 'Brands' },
+      { value: '17',  label: 'Awards' },
+      { value: '7',   label: 'Years of Experience' },
     ],
   },
   'branding-design': {
@@ -48,6 +62,12 @@ const services = {
       'Design Systems & Guidelines',
       'Brand Collateral',
     ],
+    statement: 'A brand is the sum of every impression it leaves. We design identities that are coherent, timeless, and unmistakably yours — from the first glance to the last touchpoint.',
+    stats: [
+      { value: '80+', label: 'Brands Built' },
+      { value: '17',  label: 'Awards' },
+      { value: '7',   label: 'Years of Experience' },
+    ],
   },
   'employer-branding': {
     title: 'Employer Branding',
@@ -60,6 +80,12 @@ const services = {
       'Employee Storytelling',
       'Culture & Onboarding Asset Design',
     ],
+    statement: 'The best people choose companies with a story worth joining. We help you tell yours — with honesty, clarity, and creative power that attracts talent and keeps it.',
+    stats: [
+      { value: '40+', label: 'Companies' },
+      { value: '17',  label: 'Awards' },
+      { value: '7',   label: 'Years of Experience' },
+    ],
   },
   websites: {
     title: 'Websites',
@@ -71,6 +97,12 @@ const services = {
       'Web Design',
       'Web Development',
       'SEO measures',
+    ],
+    statement: 'We can turn (almost) any idea into reality. We believe in the innovative and dynamic CMS Webflow. We merge innovation with performance — Webflow even ranks us among the «Top Rated» worldwide developers.',
+    stats: [
+      { value: '80', label: 'Projects' },
+      { value: '17', label: 'Awards' },
+      { value: '7',  label: 'Years of Experience' },
     ],
   },
 }
@@ -107,7 +139,11 @@ export default function ServicePage() {
       {/* Offers Section with TV Static hover effect */}
       <ServiceOffers offers={service.offers} />
 
-      <Footer />
+      <ServiceStatement text={service.statement} stats={service.stats} />
+
+      <ServiceWorkGrid />
+
+      <OtherExpertise currentSlug={slug} />
     </Layout>
   )
 }
