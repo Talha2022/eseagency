@@ -34,7 +34,7 @@ export default function ServiceStatement({
 
           {/* Right — large statement */}
           <div className="flex-1">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight tracking-tight text-white">
               {text}
             </p>
           </div>
@@ -46,17 +46,11 @@ export default function ServiceStatement({
       <div className="border-t border-white/10 mx-10" />
 
       {/* Lower block — stats */}
-      <div className="px-10 pt-12 pb-16 max-w-7xl mx-auto">
-        <div className="flex gap-16">
-
-          {/* Left spacer — keeps stats aligned with the text column */}
-          <div className="w-64 shrink-0" />
-
-          {/* Stats row */}
-          <div className="flex-1 flex gap-72">
+      <div className="px-10 pt-12 pb-16">
+        <div className="flex justify-center gap-72">
             {stats.map(({ value, label: statLabel }) => (
               <div key={statLabel} className="flex flex-col gap-2">
-                <span className="text-5xl sm:text-6xl font-bold text-white leading-none">
+                <span className="text-5xl sm:text-6xl font-light text-white leading-none">
                   {value}
                 </span>
                 <span className="text-xs tracking-widest text-white/50 uppercase">
@@ -64,8 +58,6 @@ export default function ServiceStatement({
                 </span>
               </div>
             ))}
-          </div>
-
         </div>
       </div>
 

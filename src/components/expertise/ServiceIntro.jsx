@@ -18,10 +18,10 @@ export default function ServiceIntro({
       <div className="border-t border-white/10 mx-10" />
 
       {/* Content */}
-      <div className="relative z-10 flex gap-16 px-10 py-24 max-w-7xl mx-auto">
+      <div className="relative z-10 flex gap-28 px-10 py-24 max-w-7xl mx-auto">
 
         {/* Left — label */}
-        <div className="w-64 shrink-0 pt-1">
+        <div className="w-[340px] shrink-0 pt-1">
           <span className="text-xs tracking-widest text-white/50 uppercase">
             {label}
           </span>

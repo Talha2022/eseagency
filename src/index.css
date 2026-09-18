@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+/* ─── Heuvel Grotesk DEMO ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'HeuvelGrotesk';
+  src: url('/src/assets/Fonts/HeuvelGroteskDEMO-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  /* Exclude digits 0–9 — they will fall back to system-ui */
+  unicode-range:
+    U+0020-0029,   /* space ! " # $ % & ' ( ) */
+    U+002A-002F,   /* * + , - . /              */
+    U+003A-007E,   /* : ; < = > ? @ A–Z [ \ ] ^ _ ` a–z { | } ~ */
+    U+00A0-FFFF;   /* everything above basic ASCII digits         */
+}
+
+/* Apply to all headings globally */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HeuvelGrotesk', sans-serif;
+}
+
+/* Apply site-wide — overrides Tailwind preflight */
+html, body, * {
+  font-family: 'HeuvelGrotesk', sans-serif;
+}
+
 * {
   scrollbar-width: none;
 }
@@ -9,6 +34,10 @@
 }
 
 @theme {
+  --font-heuvel: 'HeuvelGrotesk', sans-serif;
+  --font-sans: 'HeuvelGrotesk', sans-serif;
+  --default-font-family: 'HeuvelGrotesk', sans-serif;
+
   --animate-marquee: marquee-scroll 35s linear infinite;
   --animate-team-scroll: team-scroll 30s linear infinite;
 

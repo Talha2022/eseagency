@@ -44,8 +44,8 @@ export default function Navbar({ transparent = false }) {
   return (
     <header
       style={{
-        backgroundColor: isDropdownOpen ? '#0d0d0e' : transparent ? 'transparent' : '#0d0d0e',
-        borderBottom: isDropdownOpen ? '1px solid rgba(255,255,255,0.10)' : '1px solid rgba(255,255,255,0.05)',
+        backgroundColor: isDropdownOpen ? '#000000' : transparent ? 'transparent' : '#0d0d0e',
+        borderBottom: 'none',
         transition: `background-color ${DURATION} ${EASING}, border-color ${DURATION} ${EASING}`,
       }}
       className="relative z-50 w-full"
@@ -135,7 +135,7 @@ export default function Navbar({ transparent = false }) {
           visibility: isDropdownOpen ? 'visible' : 'hidden',
           pointerEvents: isDropdownOpen ? 'auto' : 'none',
         }}
-        className="absolute top-full left-0 right-0 w-full bg-[#0d0d0e]/98 backdrop-blur-2xl border-b border-white/10 shadow-2xl origin-top z-50"
+        className="absolute top-full left-0 right-0 w-full bg-black border-b border-white/10 shadow-2xl origin-top z-50"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-10 lg:py-14">
           <div className="flex items-start gap-12">

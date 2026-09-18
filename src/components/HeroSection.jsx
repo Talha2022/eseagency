@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const marqueeText = 'OVERTAKE TIME WITH US · OVERTAKE TIME WITH US · OVERTAKE TIME WITH US · '
+const marqueeText = 'OVERTAKE TIME WITH US - OVERTAKE TIME WITH US - OVERTAKE TIME WITH US - '
 const SCROLL_RANGE = 1600
 const FPS = 24
 

@@ -6,6 +6,7 @@ import img5 from '../assets/homepage/work5.jpg'
 import img6 from '../assets/homepage/work6.jpg'
 import img7 from '../assets/homepage/work7.jpg'
 import img8 from '../assets/homepage/work8.jpg'
+import StaticButton from './StaticButton'
 
 const projects = [
   { id: 1, label: 'DENNER',            img: img1 },
@@ -68,9 +69,9 @@ export default function AboutSection() {
 
         {/* Show all button */}
         <div className="flex justify-center mt-10">
-          <button className="text-white text-xs tracking-widest border border-white/30 rounded-full px-6 py-2.5 hover:bg-white hover:text-black transition-colors duration-300">
+          <StaticButton className="text-white text-xs tracking-widest border border-white/30 rounded-full px-6 py-2.5 bg-[#555] hover:brightness-110 transition-all duration-300">
             Show all ↗
-          </button>
+          </StaticButton>
         </div>
       </div>
 

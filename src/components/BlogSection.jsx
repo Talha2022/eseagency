@@ -3,6 +3,7 @@ import blog2 from '../assets/homepage/blog2.jpg'
 import blog3 from '../assets/homepage/blog3.jpg'
 import authorElia   from '../assets/homepage/author-elia.jpg'
 import authorDamian from '../assets/homepage/author-damian.jpg'
+import StaticButton from './StaticButton'
 
 const posts = [
   {
@@ -37,15 +38,15 @@ export default function BlogSection() {
 
       {/* Header row */}
       <div className="flex items-start justify-between mb-8">
-        <h2 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight max-w-xs">
+        <h2 className="text-2xl md:text-3xl font-black leading-tight tracking-tight max-w-xs">
           News from the world<br />of ESE
         </h2>
-        <button className="flex items-center gap-1.5 text-xs text-white/60 hover:text-white transition-colors duration-200 mt-1 shrink-0">
+        <StaticButton className="flex items-center gap-1.5 text-xs text-white/80 hover:text-white transition-colors duration-200 mt-1 shrink-0 border border-white/20 rounded-full px-4 py-2 bg-[#555]">
           Show all
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17L17 7M17 7H7M17 7v10"/>
           </svg>
-        </button>
+        </StaticButton>
       </div>
 
       {/* Cards */}
@@ -53,14 +54,14 @@ export default function BlogSection() {
         {posts.map((post, i) => (
           <div
             key={i}
-            className="bg-[#1c1c1c] rounded-2xl overflow-hidden group cursor-pointer flex flex-col"
+            className="bg-[#1c1c1c] rounded-md overflow-hidden group cursor-pointer flex flex-col"
           >
-            {/* Fixed-height image area */}
-            <div className="h-[220px] overflow-hidden">
+            {/* Full natural image height */}
+            <div className="overflow-hidden">
               <img
                 src={post.img}
                 alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
