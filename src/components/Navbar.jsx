@@ -10,8 +10,6 @@ const links = [
   { label: 'Home',      to: '/' },
   { label: 'Work',      to: '/work' },
   { label: 'Expertise', to: null, dropdown: true },
-  { label: 'Agency',    to: '/agency' },
-  { label: 'Jobs',      to: null },
   { label: 'Contact',   to: '/contact' },
 ]
 
@@ -120,10 +118,7 @@ export default function Navbar({ transparent = false }) {
               </li>
             )
           })}
-          <li className="flex gap-1.5 text-sm ml-2">
-            <a href="#" className="text-white/50 hover:text-white no-underline">De</a>
-            <a href="#" className="font-bold text-white no-underline">En</a>
-          </li>
+            
         </ul>
       </div>
 
