@@ -21,7 +21,7 @@ export default function ContactPage() {
       <div className="flex-1 w-full flex flex-col lg:flex-row min-h-screen">
 
         {/* LEFT COLUMN: Contact Cards & Details */}
-        <div className="w-full lg:w-[48%] xl:w-[45%] 2xl:w-[42%] relative px-6 sm:px-10 lg:px-14 pt-28 pb-14 flex flex-col justify-between z-10"
+        <div className="w-full lg:w-[48%] xl:w-[45%] 2xl:w-[42%] relative px-6 sm:px-10 lg:px-14 pt-24 sm:pt-28 pb-10 sm:pb-14 flex flex-col justify-between z-10"
           style={{ backgroundColor: '#1c1c1e' }}
         >
           {/* TV static overlay scoped to left column */}
@@ -156,9 +156,9 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Keyvisual background */}
+        {/* RIGHT COLUMN: Keyvisual background — hidden on small mobile, shown from md up */}
         <div
-          className="w-full lg:w-[52%] xl:w-[55%] 2xl:w-[58%] min-h-[660px] lg:min-h-screen relative flex flex-col justify-end items-center overflow-hidden"
+          className="hidden sm:flex w-full lg:w-[52%] xl:w-[55%] 2xl:w-[58%] min-h-[400px] lg:min-h-screen relative flex-col justify-end items-center overflow-hidden"
         >
           {/* Keyvisual background image */}
           <img

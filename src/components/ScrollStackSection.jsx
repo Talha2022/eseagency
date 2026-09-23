@@ -79,12 +79,12 @@ function Panel({ item, index, totalCount, onProgress }) {
         </div>
 
         {/* Oversized title — marquee scrolling left like hero */}
-        <div className="absolute bottom-20 left-0 right-0 z-10 overflow-hidden">
+        <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 overflow-hidden">
           <div className="flex w-max animate-marquee">
-            <h2 className="text-[13vw] font-bold leading-none tracking-tight text-white whitespace-nowrap pr-[10vw]">
+            <h2 className="text-[16vw] sm:text-[13vw] font-bold leading-none tracking-tight text-white whitespace-nowrap pr-[10vw]">
               {item.title}
             </h2>
-            <h2 className="text-[13vw] font-bold leading-none tracking-tight text-white whitespace-nowrap pr-[10vw]" aria-hidden="true">
+            <h2 className="text-[16vw] sm:text-[13vw] font-bold leading-none tracking-tight text-white whitespace-nowrap pr-[10vw]" aria-hidden="true">
               {item.title}
             </h2>
           </div>
@@ -92,7 +92,7 @@ function Panel({ item, index, totalCount, onProgress }) {
           {/* Animated tagline below title */}
           {item.taglines?.length > 0 && (
             <p
-              className={`text-sm font-light text-white/70 pl-6 mt-2 tracking-widest transition-opacity duration-400 ${
+              className={`text-xs sm:text-sm font-light text-white/70 pl-4 sm:pl-6 mt-1 sm:mt-2 tracking-widest transition-opacity duration-400 ${
                 visible ? 'opacity-100' : 'opacity-0'
               }`}
             >
@@ -110,7 +110,7 @@ function Panel({ item, index, totalCount, onProgress }) {
 function ProgressBars({ progresses, total, visible }) {
   return (
     <div
-      className="fixed bottom-8 left-8 right-8 z-50 flex gap-2 transition-opacity duration-300"
+      className="fixed bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 z-50 flex gap-1.5 sm:gap-2 transition-opacity duration-300"
       style={{ opacity: visible ? 1 : 0, pointerEvents: 'none' }}
     >
       {Array.from({ length: total }).map((_, i) => (

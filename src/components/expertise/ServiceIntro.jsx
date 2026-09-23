@@ -15,13 +15,13 @@ export default function ServiceIntro({
       
 
       {/* Top border line */}
-      <div className="border-t border-white/10 mx-10" />
+      <div className="border-t border-white/10 mx-6 sm:mx-10" />
 
       {/* Content */}
-      <div className="relative z-10 flex gap-28 px-10 py-24 max-w-7xl mx-auto">
+      <div className="relative z-10 flex flex-col sm:flex-row gap-4 sm:gap-28 px-6 sm:px-10 py-12 sm:py-24 max-w-7xl mx-auto">
 
         {/* Left — label */}
-        <div className="w-[340px] shrink-0 pt-1">
+        <div className="sm:w-[340px] shrink-0 pt-1">
           <span className="text-xs tracking-widest text-white/50 uppercase">
             {label}
           </span>
@@ -29,7 +29,7 @@ export default function ServiceIntro({
 
         {/* Right — body text */}
         <div className="flex-1 max-w-2xl">
-          <p className="text-lg sm:text-xl leading-relaxed text-white/85">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-white/85">
             {text}
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function ServiceIntro({
       </div>
 
       {/* Bottom border line */}
-      <div className="border-b border-white/10 mx-10" />
+      <div className="border-b border-white/10 mx-6 sm:mx-10" />
 
     </section>
   )

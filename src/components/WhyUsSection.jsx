@@ -39,12 +39,12 @@ export default function WhyUsSection() {
   return (
     <>
       {/* Why us text block */}
-      <section className="bg-black text-white px-10 py-24">
-        <div className="max-w-5xl mx-auto flex gap-16">
-          <p className="text-xs tracking-widest text-white/50 whitespace-nowrap pt-2 shrink-0">
+      <section className="bg-black text-white px-6 sm:px-10 py-16 sm:py-24">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-6 sm:gap-16">
+          <p className="text-xs tracking-widest text-white/50 sm:whitespace-nowrap pt-2 shrink-0">
             Why us
           </p>
-          <p className="text-[clamp(24px,3.5vw,48px)] font-light leading-tight tracking-tight">
+          <p className="text-[clamp(20px,3.5vw,48px)] font-light leading-tight tracking-tight">
             We see our clients as strategic partners. This means: In close
             cooperation, we are there for a wide range of marketing tasks. We
             implement our ideas and concepts seamlessly — everything from a single

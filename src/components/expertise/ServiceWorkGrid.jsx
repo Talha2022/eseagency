@@ -55,18 +55,18 @@ export default function ServiceWorkGrid({
     <section className="bg-black text-white">
 
       {/* Top border */}
-      <div className="border-t border-white/10 mx-10" />
+      <div className="border-t border-white/10 mx-6 sm:mx-10" />
 
       {/* Heading */}
-      <div className="px-10 pt-10 pb-6">
-        <h2 className="text-xl sm:text-2xl font-bold leading-tight max-w-xs text-white">
+      <div className="px-6 sm:px-10 pt-8 sm:pt-10 pb-4 sm:pb-6">
+        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold leading-tight max-w-xs text-white">
           {heading}
         </h2>
       </div>
 
-      {/* Grid — same px-10 padding so first column aligns with heading */}
-      <div className="px-10">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-[3px]">
+      {/* Grid */}
+      <div className="px-6 sm:px-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-[2px] sm:gap-[3px]">
           {visible.map((src, i) => (
             <div
               key={i}
@@ -106,7 +106,7 @@ export default function ServiceWorkGrid({
       )}
 
       {/* Bottom border */}
-      <div className="border-b border-white/10 mx-10" />
+      <div className="border-b border-white/10 mx-6 sm:mx-10" />
 
     </section>
   )

@@ -19,14 +19,14 @@ export default function ServiceStatement({
     <section className="relative bg-black text-white overflow-hidden">
 
       {/* Top border */}
-      <div className="border-t border-white/10 mx-10" />
+      <div className="border-t border-white/10 mx-6 sm:mx-10" />
 
       {/* Upper block — label + large text */}
-      <div className="px-10 pt-16 pb-20 max-w-7xl mx-auto">
-        <div className="flex gap-16">
+      <div className="px-6 sm:px-10 pt-12 sm:pt-16 pb-14 sm:pb-20 max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-16">
 
           {/* Left — small label */}
-          <div className="w-64 shrink-0 pt-2">
+          <div className="sm:w-64 shrink-0 pt-2">
             <span className="text-xs tracking-widest text-white/50 uppercase">
               {label}
             </span>
@@ -34,7 +34,7 @@ export default function ServiceStatement({
 
           {/* Right — large statement */}
           <div className="flex-1">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight tracking-tight text-white">
+            <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight tracking-tight text-white">
               {text}
             </p>
           </div>
@@ -43,14 +43,14 @@ export default function ServiceStatement({
       </div>
 
       {/* Mid divider */}
-      <div className="border-t border-white/10 mx-10" />
+      <div className="border-t border-white/10 mx-6 sm:mx-10" />
 
       {/* Lower block — stats */}
-      <div className="px-10 pt-12 pb-16">
-        <div className="flex justify-center gap-72">
+      <div className="px-6 sm:px-10 pt-10 sm:pt-12 pb-12 sm:pb-16">
+        <div className="flex justify-center gap-10 sm:gap-24 lg:gap-72 flex-wrap">
             {stats.map(({ value, label: statLabel }) => (
               <div key={statLabel} className="flex flex-col gap-2">
-                <span className="text-5xl sm:text-6xl font-light text-white leading-none">
+                <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-none">
                   {value}
                 </span>
                 <span className="text-xs tracking-widest text-white/50 uppercase">
@@ -62,7 +62,7 @@ export default function ServiceStatement({
       </div>
 
       {/* Bottom border */}
-      <div className="border-b border-white/10 mx-10" />
+      <div className="border-b border-white/10 mx-6 sm:mx-10" />
 
     </section>
   )

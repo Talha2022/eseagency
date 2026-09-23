@@ -51,7 +51,7 @@ export default function ServiceHero({ title = 'Expertise', label, bgImage }) {
       >
         {/* Small label */}
         {label && (
-          <div className="px-10 mb-3">
+          <div className="px-6 sm:px-10 mb-3">
             <span className="text-xs tracking-widest text-white/70 uppercase">
               {label}
             </span>
@@ -61,11 +61,11 @@ export default function ServiceHero({ title = 'Expertise', label, bgImage }) {
         {/* Marquee */}
         <div className="overflow-hidden">
           <div className="flex w-max animate-marquee">
-            <span className="text-[clamp(80px,14vw,180px)] font-extrabold leading-none whitespace-nowrap tracking-tight text-white">
+            <span className="text-[clamp(48px,12vw,180px)] font-extrabold leading-none whitespace-nowrap tracking-tight text-white">
               {marqueeText}
             </span>
             <span
-              className="text-[clamp(80px,14vw,180px)] font-extrabold leading-none whitespace-nowrap tracking-tight text-white"
+              className="text-[clamp(48px,12vw,180px)] font-extrabold leading-none whitespace-nowrap tracking-tight text-white"
               aria-hidden="true"
             >
               {marqueeText}

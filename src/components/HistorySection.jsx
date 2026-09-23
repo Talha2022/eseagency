@@ -37,8 +37,8 @@ export default function HistorySection() {
       <HaloReel
         items={CARDS}
         aria-label="ESE Agency history reel"
-        cardWidth={380}
-        cardHeight={500}
+        cardWidth={280}
+        cardHeight={380}
         minScale={0.35}
         radiusXRatio={0.38}
         centerXRatio={0}
@@ -47,11 +47,11 @@ export default function HistorySection() {
         stepDuration={700}
         spread={1.3}
         centerLabel={
-          <span className="text-[3vw] font-bold tracking-tight text-white/80 leading-tight">
+          <span className="text-[5vw] sm:text-[3vw] font-bold tracking-tight text-white/80 leading-tight">
             Discover Our History
           </span>
         }
-        className="h-[700px]"
+        className="h-[500px] sm:h-[600px] lg:h-[700px]"
       />
     </section>
   )

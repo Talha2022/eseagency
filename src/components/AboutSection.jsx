@@ -24,12 +24,12 @@ export default function AboutSection() {
     <section className="bg-black text-white">
 
       {/* About text */}
-      <div className="px-10 py-24">
-        <div className="max-w-5xl mx-auto flex gap-16">
-          <p className="text-xs tracking-widest text-white/50 whitespace-nowrap pt-2 shrink-0">
+      <div className="px-6 sm:px-10 py-16 sm:py-24">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-6 sm:gap-16">
+          <p className="text-xs tracking-widest text-white/50 sm:whitespace-nowrap pt-2 shrink-0">
             This is ESE
           </p>
-          <p className="text-[clamp(24px,3.5vw,48px)] font-light leading-tight tracking-tight">
+          <p className="text-[clamp(20px,3.5vw,48px)] font-light leading-tight tracking-tight">
             Culture-driven, creative and competitive. Our digital agency creates
             impact for brands. In the disciplines Websites, social media, content
             marketing, campaigning and branding. Between timeless and zeitgeist.
@@ -40,26 +40,21 @@ export default function AboutSection() {
       </div>
 
       {/* Work grid */}
-      <div className="px-16 pb-16">
-        <div className="grid grid-cols-4 gap-2">
+      <div className="px-4 sm:px-16 pb-10 sm:pb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-2">
           {projects.map((p) => (
             <div
               key={p.id}
               className="relative overflow-hidden rounded-sm group cursor-pointer bg-black"
             >
-              {/* Image — natural size drives the card height */}
               <img
                 src={p.img}
                 alt={p.label}
                 className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
               />
-
-              {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              {/* Label */}
-              <div className="absolute bottom-4 left-4">
-                <span className="text-white font-bold text-sm tracking-wide drop-shadow">
+              <div className="absolute bottom-3 left-3">
+                <span className="text-white font-bold text-xs sm:text-sm tracking-wide drop-shadow">
                   {p.label}
                 </span>
               </div>
@@ -68,7 +63,7 @@ export default function AboutSection() {
         </div>
 
         {/* Show all button */}
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-8 sm:mt-10">
           <StaticButton className="text-white text-xs tracking-widest border border-white/30 rounded-full px-6 py-2.5 bg-[#555] hover:brightness-110 transition-all duration-300">
             Show all ↗
           </StaticButton>

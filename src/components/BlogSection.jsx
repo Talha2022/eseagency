@@ -34,10 +34,10 @@ const posts = [
 
 export default function BlogSection() {
   return (
-    <section className="bg-black text-white px-10 py-20">
+    <section className="bg-black text-white px-6 sm:px-10 py-14 sm:py-20">
 
       {/* Header row */}
-      <div className="flex items-start justify-between mb-8">
+      <div className="flex items-start justify-between mb-6 sm:mb-8">
         <h2 className="text-2xl md:text-3xl font-black leading-tight tracking-tight max-w-xs">
           News from the world<br />of ESE
         </h2>
@@ -49,8 +49,8 @@ export default function BlogSection() {
         </StaticButton>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-3 gap-4">
+      {/* Cards — 1 col mobile, 3 col desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {posts.map((post, i) => (
           <div
             key={i}
@@ -66,28 +66,16 @@ export default function BlogSection() {
             </div>
 
             {/* Content */}
-            <div className="p-5 flex flex-col gap-4 flex-1">
-              {/* Category */}
+            <div className="p-4 sm:p-5 flex flex-col gap-3 sm:gap-4 flex-1">
               <span className="text-white/40 text-xs tracking-wide">{post.category}</span>
-
-              {/* Title */}
-              <h3 className="text-white text-lg font-semibold leading-snug flex-1">
+              <h3 className="text-white text-base sm:text-lg font-semibold leading-snug flex-1">
                 {post.title}
               </h3>
-
-              {/* Meta */}
               <div className="flex items-center gap-4 text-white/50 text-xs pt-3 border-t border-white/10">
-                {/* Author with avatar */}
                 <span className="flex items-center gap-2">
-                  <img
-                    src={post.avatar}
-                    alt={post.author}
-                    className="w-5 h-5 rounded-full object-cover"
-                  />
+                  <img src={post.avatar} alt={post.author} className="w-5 h-5 rounded-full object-cover" />
                   {post.author}
                 </span>
-
-                {/* Read time */}
                 <span className="flex items-center gap-1.5">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
